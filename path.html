@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script>
+$.get('path.svg', function(data) {
+    $(document.body).append(data.documentElement);
+
+    $('#LOGO').click(function() {
+        $('#myDrawing').show();
+    });
+
+
+    $('#clickYes').click(function() {
+        $('#clickYes').zoomIn();
+    });
+
+    $('#clickYes').hover(
+        function mouseover() {
+            $('#clickYes').blur();
+        },
+
+        function mouseleave() {
+            $('#clickYes').blur(false);
+        }
+    );
+
+    $('#clickNo').click(function() {
+        $('#clickNo').zoomIn();
+    });
+
+    $('#clickNo').hover(
+        function mouseover() {
+            $('#clickNo').blur();
+        },
+
+        function mouseleave() {
+            $('#clickNo').blur(false);
+        }
+    );
+
+});
+</script>
+
+<style>
+    #clickYes, #clickNo {
+        cursor: pointer;
+    }
+</style>
